@@ -109,33 +109,33 @@ fun Content(value2: String, from2: String, to2: String, result2: String, onValue
         return when (from) {
             "Centimeters" -> {
                 when (to) {
-                    "Meters" -> (value.toDoubleOrNull()?.let { it / 100 }).toString()
-                    "Feet" -> (value.toDoubleOrNull()?.let { it / 30.48 }).toString()
-                    "Milimiters" -> (value.toDoubleOrNull()?.let { it * 10 }).toString()
+                    "Meters" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 100 }).toString()
+                    "Feet" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 30.48 }).toString()
+                    "Milimiters" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 10 }).toString()
                     else -> value
                 }
             }
             "Meters" -> {
                 when (to) {
-                    "Centimeters" -> (value.toDoubleOrNull()?.let { it * 100 }).toString()
-                    "Feet" -> (value.toDoubleOrNull()?.let { it * 3.28084 }).toString()
-                    "Milimiters" -> (value.toDoubleOrNull()?.let { it * 1000 }).toString()
+                    "Centimeters" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 100 }).toString()
+                    "Feet" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 3.28084 }).toString()
+                    "Milimiters" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 1000 }).toString()
                     else -> value
                 }
             }
             "Feet" -> {
                 when (to) {
-                    "Centimeters" -> (value.toDoubleOrNull()?.let { it * 30.48 }).toString()
-                    "Meters" -> (value.toDoubleOrNull()?.let { it / 3.28084 }).toString()
-                    "Milimiters" -> (value.toDoubleOrNull()?.let { it * 304.8 }).toString()
+                    "Centimeters" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 30.48 }).toString()
+                    "Meters" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 3.28084 }).toString()
+                    "Milimiters" -> ((value.toDoubleOrNull() ?: 0.0).let { it * 304.8 }).toString()
                     else -> value
                 }
             }
             "Milimiters" -> {
                 when (to) {
-                    "Centimeters" -> (value.toDoubleOrNull()?.let { it / 10 }).toString()
-                    "Meters" -> (value.toDoubleOrNull()?.let { it / 1000 }).toString()
-                    "Feet" -> (value.toDoubleOrNull()?.let { it / 304.8 }).toString()
+                    "Centimeters" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 10 }).toString()
+                    "Meters" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 1000 }).toString()
+                    "Feet" -> ((value.toDoubleOrNull() ?: 0.0).let { it / 304.8 }).toString()
                     else -> value
                 }
             }
